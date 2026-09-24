@@ -9,3 +9,6 @@ description = "Block-device IPC ABI shared across virtio-blk / ahci / nvme / ide
 [lib]
 name = "block_abi"
 path = "lib.rs"
+
+[dependencies]
+zigbone-abi = { git = "https://github.com/crux-os/zigbone-abi.git" }

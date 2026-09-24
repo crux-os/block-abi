@@ -9,8 +9,7 @@ pub const OP_WRITE_SECTORS: u32 = 1;
 pub const OP_FLUSH:         u32 = 2;
 pub const OP_GEOMETRY:      u32 = 3;
 
-pub const E_OK:    i64 = 0;
-pub const E_IO:    i64 = -5;
-pub const E_NODEV: i64 = -19;
-pub const E_INVAL: i64 = -22;
-pub const E_NOSYS: i64 = -38;
+/// Driver return values are system statuses from the error registry
+/// (zigbone_abi::errors): 0 = OK, generic errors (EIO, ENODEV, EINVAL,
+/// ENOSYS) where they fit, the `block` facility for device conditions.
+pub use zigbone_abi::errors::{Error, OK, Status, block as errors};
