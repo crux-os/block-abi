@@ -2,6 +2,8 @@
 #![cfg_attr(not(test), no_std)]
 
 pub const SLOT_ID_BASE: u64 = 0x30_56_45_44_5F_4B_4C_42;
+/// How many: BLK_DEV0 .. BLK_DEV0 + MAX_DEVICES - 1.
+pub const MAX_DEVICES: u64 = 8;
 pub const SECTOR_SIZE:  u64 = 512;
 
 /// Largest READ/WRITE request drivers accept: 1 MiB. A driver short of
