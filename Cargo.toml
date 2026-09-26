@@ -2,7 +2,7 @@
 name        = "block-abi"
 version     = "0.1.0"
 edition      = "2024"
-rust-version = "1.92"
+rust-version = "1.93"
 license     = "Apache-2.0"
 description = "Block-device IPC ABI shared across virtio-blk / ahci / nvme / ide drivers."
 
