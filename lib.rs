@@ -4,17 +4,17 @@
 pub const SLOT_ID_BASE: u64 = 0x30_56_45_44_5F_4B_4C_42;
 /// How many: BLK_DEV0 .. BLK_DEV0 + MAX_DEVICES - 1.
 pub const MAX_DEVICES: u64 = 8;
-pub const SECTOR_SIZE:  u64 = 512;
+pub const SECTOR_SIZE: u64 = 512;
 
 /// Largest READ/WRITE request drivers accept: 1 MiB. A driver short of
 /// DMA memory may accept less and answers EINVAL above its limit;
 /// callers then retry in smaller pieces.
 pub const MAX_XFER_SECTORS: u32 = 2048;
 
-pub const OP_READ_SECTORS:  u32 = 0;
+pub const OP_READ_SECTORS: u32 = 0;
 pub const OP_WRITE_SECTORS: u32 = 1;
-pub const OP_FLUSH:         u32 = 2;
-pub const OP_GEOMETRY:      u32 = 3;
+pub const OP_FLUSH: u32 = 2;
+pub const OP_GEOMETRY: u32 = 3;
 
 // ── Asynchronous requests ────────────────────────────────────────────
 // A client opens a queue, submits batches of requests and reaps their
@@ -35,9 +35,9 @@ pub const OP_GEOMETRY:      u32 = 3;
 // A request the driver can't run asynchronously completes with E2BIG
 // (buffer too scattered for one transfer); run it synchronously instead.
 // ENOSYS from OP_QUEUE_OPEN: the driver has no asynchronous path.
-pub const OP_QUEUE_OPEN:  u32 = 4;
-pub const OP_SUBMIT:      u32 = 5;
-pub const OP_REAP:        u32 = 6;
+pub const OP_QUEUE_OPEN: u32 = 4;
+pub const OP_SUBMIT: u32 = 5;
+pub const OP_REAP: u32 = 6;
 pub const OP_QUEUE_CLOSE: u32 = 7;
 
 /// Requests submitted and not yet reaped, per queue.
